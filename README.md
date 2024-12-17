@@ -1,6 +1,6 @@
 #  **# Ai-Powered-Medical-Diagnosis-System**
 
-Technology/Tools Used: Python, Flask(for backend), Scikit-learn, Python Libraries( Pandas,Numpy,Matplotlib).
+Technology/Tools Used: Python, Flask(for backend), Scikit-learn, Python Libraries( Pandas,Numpy).
 
 Developing an advanced AI-based system that provides personalized medical recommendations and disease predictions based on user-input symptoms. 
 
