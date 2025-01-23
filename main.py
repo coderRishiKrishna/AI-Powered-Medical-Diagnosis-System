@@ -1,7 +1,9 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template ,send_file, jsonify , url_for
+
 import numpy as np
 import pandas as pd
 import pickle
+import os
 
 # load datasets
 symptom_description = pd.read_csv("datasets/symtoms_df.csv")
@@ -51,10 +53,15 @@ def get_predicted_value(patient_symptoms):
     
 
 
-# creating routes
+# creating route
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+###### additional work
+
+
 
 @app.route('/predict',methods=['POST','GET'])
 def predict():
@@ -75,7 +82,9 @@ def predict():
             wrkout='NA'
 
 
-        return render_template('index.html',predicted_disease=predicted_disease,dis_des=desc,dis_pre=pre,dis_med=med,dis_diet=die,dis_wrkout=wrkout)
+        return render_template('index.html',predicted_disease=predicted_disease,dis_des=desc,dis_pre=pre,dis_med=med,dis_diet=die,dis_wrkout=wrkout,symptoms=user_symptoms)
+
+
 
 @app.route('/about')
 def about():
